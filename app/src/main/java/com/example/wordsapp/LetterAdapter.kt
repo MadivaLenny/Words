@@ -64,14 +64,14 @@ class LetterAdapter :
         val item = list.get(position)
         holder.button.text = item.toString()
 
-        /**
-         * setting up an explicit intent, when a suer taps a letter, they should be taken to a second screen with a list of words.
-         */
+
+        //setting up an explicit intent, when a suer taps a letter, they should be taken to a second screen with a list of words.
         holder.button.setOnClickListener {
             val context = holder.view.context
             val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("letter", holder.button.text.toString())
+            intent.putExtra(DetailActivity.LETTER, holder.button.text.toString())
             context.startActivity(intent)
+        //end of intent
         }
     }
 
